@@ -3,25 +3,27 @@ region: tor
 
 workers:
   - name: openclaw
-    image:
-      registry_type: DOCKER_HUB
-      repository: openclaw/openclaw
-      tag: latest
+    dockerfile_path: /Dockerfile
+    source_dir: /
     instance_count: 1
     instance_size_slug: apps-s-1vcpu-2gb
     envs:
       - key: OPENCLAW_GATEWAY_TOKEN
         scope: RUN_TIME
         type: SECRET
+
       - key: ENABLE_NGROK
         scope: RUN_TIME
         value: "false"
+
       - key: TAILSCALE_ENABLE
         scope: RUN_TIME
         value: "false"
+
       - key: ENABLE_SPACES
         scope: RUN_TIME
         value: "false"
+
       - key: ENABLE_UI
         scope: RUN_TIME
         value: "true"
