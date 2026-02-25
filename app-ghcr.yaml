@@ -101,6 +101,4 @@ workers:
       - key: SSH_ENABLE
         scope: RUN_TIME
         value: "false"
-      - key: GITHUB_USERNAME
-        scope: RUN_TIME
-        value: ""
+      
